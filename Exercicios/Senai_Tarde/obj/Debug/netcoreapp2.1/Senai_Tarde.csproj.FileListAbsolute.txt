@@ -1,0 +1,14 @@
+c:\users\44346823858\source\repos\Senai_Tarde\Senai_Tarde\bin\Debug\netcoreapp2.1\Senai_Tarde.deps.json
+c:\users\44346823858\source\repos\Senai_Tarde\Senai_Tarde\bin\Debug\netcoreapp2.1\Senai_Tarde.runtimeconfig.json
+c:\users\44346823858\source\repos\Senai_Tarde\Senai_Tarde\bin\Debug\netcoreapp2.1\Senai_Tarde.runtimeconfig.dev.json
+c:\users\44346823858\source\repos\Senai_Tarde\Senai_Tarde\bin\Debug\netcoreapp2.1\Senai_Tarde.dll
+c:\users\44346823858\source\repos\Senai_Tarde\Senai_Tarde\obj\Debug\netcoreapp2.1\Senai_Tarde.csprojAssemblyReference.cache
+c:\users\44346823858\source\repos\Senai_Tarde\Senai_Tarde\obj\Debug\netcoreapp2.1\Senai_Tarde.csproj.CoreCompileInputs.cache
+c:\users\44346823858\source\repos\Senai_Tarde\Senai_Tarde\obj\Debug\netcoreapp2.1\Senai_Tarde.RazorAssemblyInfo.cache
+c:\users\44346823858\source\repos\Senai_Tarde\Senai_Tarde\obj\Debug\netcoreapp2.1\Senai_Tarde.RazorAssemblyInfo.cs
+c:\users\44346823858\source\repos\Senai_Tarde\Senai_Tarde\obj\Debug\netcoreapp2.1\Senai_Tarde.AssemblyInfoInputs.cache
+c:\users\44346823858\source\repos\Senai_Tarde\Senai_Tarde\obj\Debug\netcoreapp2.1\Senai_Tarde.AssemblyInfo.cs
+c:\users\44346823858\source\repos\Senai_Tarde\Senai_Tarde\obj\Debug\netcoreapp2.1\Senai_Tarde.RazorTargetAssemblyInfo.cache
+c:\users\44346823858\source\repos\Senai_Tarde\Senai_Tarde\bin\Debug\netcoreapp2.1\Senai_Tarde.pdb
+c:\users\44346823858\source\repos\Senai_Tarde\Senai_Tarde\obj\Debug\netcoreapp2.1\Senai_Tarde.dll
+c:\users\44346823858\source\repos\Senai_Tarde\Senai_Tarde\obj\Debug\netcoreapp2.1\Senai_Tarde.pdb
