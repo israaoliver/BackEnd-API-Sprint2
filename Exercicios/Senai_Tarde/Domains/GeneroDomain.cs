@@ -8,6 +8,7 @@ namespace Senai_Tarde.Domains
     public class GeneroDomain
     {
         public int IdGenero { get; set; }
+
         public string Nome { get; set; }
     }
 }

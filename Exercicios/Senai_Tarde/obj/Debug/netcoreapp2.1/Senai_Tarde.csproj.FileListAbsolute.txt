@@ -12,3 +12,11 @@ c:\users\44346823858\source\repos\Senai_Tarde\Senai_Tarde\obj\Debug\netcoreapp2.
 c:\users\44346823858\source\repos\Senai_Tarde\Senai_Tarde\bin\Debug\netcoreapp2.1\Senai_Tarde.pdb
 c:\users\44346823858\source\repos\Senai_Tarde\Senai_Tarde\obj\Debug\netcoreapp2.1\Senai_Tarde.dll
 c:\users\44346823858\source\repos\Senai_Tarde\Senai_Tarde\obj\Debug\netcoreapp2.1\Senai_Tarde.pdb
+C:\Users\44346823858\Documents\1-Docs\Meus_Repositorios\Sprint2-BackEnd\BackEnd-API-Sprint2\Exercicios\Senai_Tarde\obj\Debug\netcoreapp2.1\Senai_Tarde.csprojAssemblyReference.cache
+C:\Users\44346823858\Documents\1-Docs\Meus_Repositorios\Sprint2-BackEnd\BackEnd-API-Sprint2\Exercicios\Senai_Tarde\obj\Debug\netcoreapp2.1\Senai_Tarde.csproj.CoreCompileInputs.cache
+C:\Users\44346823858\Documents\1-Docs\Meus_Repositorios\Sprint2-BackEnd\BackEnd-API-Sprint2\Exercicios\Senai_Tarde\obj\Debug\netcoreapp2.1\Senai_Tarde.RazorAssemblyInfo.cache
+C:\Users\44346823858\Documents\1-Docs\Meus_Repositorios\Sprint2-BackEnd\BackEnd-API-Sprint2\Exercicios\Senai_Tarde\obj\Debug\netcoreapp2.1\Senai_Tarde.RazorAssemblyInfo.cs
+C:\Users\44346823858\Documents\1-Docs\Meus_Repositorios\Sprint2-BackEnd\BackEnd-API-Sprint2\Exercicios\Senai_Tarde\obj\Debug\netcoreapp2.1\Senai_Tarde.AssemblyInfoInputs.cache
+C:\Users\44346823858\Documents\1-Docs\Meus_Repositorios\Sprint2-BackEnd\BackEnd-API-Sprint2\Exercicios\Senai_Tarde\obj\Debug\netcoreapp2.1\Senai_Tarde.AssemblyInfo.cs
+C:\Users\44346823858\Documents\1-Docs\Meus_Repositorios\Sprint2-BackEnd\BackEnd-API-Sprint2\Exercicios\Senai_Tarde\obj\Debug\netcoreapp2.1\Senai_Tarde.dll
+C:\Users\44346823858\Documents\1-Docs\Meus_Repositorios\Sprint2-BackEnd\BackEnd-API-Sprint2\Exercicios\Senai_Tarde\obj\Debug\netcoreapp2.1\Senai_Tarde.pdb
