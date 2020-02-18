@@ -34,3 +34,9 @@ C:\Users\Israel\Documents\Docs\BackEnd-API-Sprint2\Exercicios\Senai_Tarde\bin\De
 C:\Users\Israel\Documents\Docs\BackEnd-API-Sprint2\Exercicios\Senai_Tarde\bin\Debug\netcoreapp2.1\Senai_Tarde.dll
 C:\Users\Israel\Documents\Docs\BackEnd-API-Sprint2\Exercicios\Senai_Tarde\bin\Debug\netcoreapp2.1\Senai_Tarde.pdb
 C:\Users\Israel\Documents\Docs\BackEnd-API-Sprint2\Exercicios\Senai_Tarde\obj\Debug\netcoreapp2.1\Senai_Tarde.RazorTargetAssemblyInfo.cache
+C:\Users\44346823858\Documents\1-Docs\Meus_Repositorios\Sprint2-BackEnd\BackEnd-API-Sprint2\Exercicios\Senai_Tarde\bin\Debug\netcoreapp2.1\Senai_Tarde.deps.json
+C:\Users\44346823858\Documents\1-Docs\Meus_Repositorios\Sprint2-BackEnd\BackEnd-API-Sprint2\Exercicios\Senai_Tarde\bin\Debug\netcoreapp2.1\Senai_Tarde.runtimeconfig.json
+C:\Users\44346823858\Documents\1-Docs\Meus_Repositorios\Sprint2-BackEnd\BackEnd-API-Sprint2\Exercicios\Senai_Tarde\bin\Debug\netcoreapp2.1\Senai_Tarde.runtimeconfig.dev.json
+C:\Users\44346823858\Documents\1-Docs\Meus_Repositorios\Sprint2-BackEnd\BackEnd-API-Sprint2\Exercicios\Senai_Tarde\bin\Debug\netcoreapp2.1\Senai_Tarde.dll
+C:\Users\44346823858\Documents\1-Docs\Meus_Repositorios\Sprint2-BackEnd\BackEnd-API-Sprint2\Exercicios\Senai_Tarde\bin\Debug\netcoreapp2.1\Senai_Tarde.pdb
+C:\Users\44346823858\Documents\1-Docs\Meus_Repositorios\Sprint2-BackEnd\BackEnd-API-Sprint2\Exercicios\Senai_Tarde\obj\Debug\netcoreapp2.1\Senai_Tarde.RazorTargetAssemblyInfo.cache

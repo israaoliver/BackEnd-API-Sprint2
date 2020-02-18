@@ -14,7 +14,13 @@ namespace Senai_Tarde.Interfaces
         /// <returns>Retorna uma lista de generos</returns>
         List<GeneroDomain> Listar();
 
+        GeneroDomain Buscar(int id);
+
         void Cadastrar(GeneroDomain genero);
+
+        void Deletar(int id);
+
+        GeneroDomain Atualizar(GeneroDomain genero);
         
     }
 }

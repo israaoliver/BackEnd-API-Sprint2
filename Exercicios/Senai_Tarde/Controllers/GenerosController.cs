@@ -28,13 +28,36 @@ namespace Senai_Tarde.Controllers
             return _generoRepository.Listar();
         }
 
+        [HttpGet("{id}")]
+        public IActionResult  Get(int id)
+        {
+            return StatusCode (200,_generoRepository.Buscar(id));
+        }
+
         [HttpPost]
         public IActionResult Post(GeneroDomain genero)
         {
             _generoRepository.Cadastrar(genero);
 
-            return StatusCode(200);
+            return StatusCode(201);
         }
+
         
+        [HttpDelete("{id}")]
+        public IActionResult Delete (int id)
+        {
+               _generoRepository.Deletar(id);
+
+                return StatusCode(202);
+
+        }
+
+        [HttpPut]
+        public GeneroDomain Put(GeneroDomain genero)
+        {
+            
+
+            return _generoRepository.Atualizar(genero);
+        }
     }
 }
