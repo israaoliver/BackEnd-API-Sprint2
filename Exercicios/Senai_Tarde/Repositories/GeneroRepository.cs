@@ -10,8 +10,22 @@ namespace Senai_Tarde.Repositories
 {
     public class GeneroRepository : IGeneroRepository
     {
-        private string StringConexao = "Data Source=DEV9\\SQLEXPRESS; initial catalog=Filmes_Prog; user Id=sa; pwd=sa@132;";
+        private string StringConexao = "Data Source=DESKTOP-16CG1FL\\SQLEXPRESS; initial catalog=Filmes_Prog; user Id=sa; pwd=sa@132;";
 
+        public void Cadastrar(GeneroDomain genero)
+        {
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                string insert = $"INSERT INTO Generos(Nome) VALUES ('{genero.Nome}') ";
+
+                con.Open();
+
+                using (SqlCommand cmd = new SqlCommand(insert, con))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
 
         public List<GeneroDomain> Listar()
         {

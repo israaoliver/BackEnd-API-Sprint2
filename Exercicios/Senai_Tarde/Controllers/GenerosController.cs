@@ -27,5 +27,14 @@ namespace Senai_Tarde.Controllers
         {
             return _generoRepository.Listar();
         }
+
+        [HttpPost]
+        public IActionResult Post(GeneroDomain genero)
+        {
+            _generoRepository.Cadastrar(genero);
+
+            return StatusCode(200);
+        }
+        
     }
 }
