@@ -18,5 +18,7 @@ namespace Senai_Tarde.Interfaces
         void AtualizarFilme(int id, FilmeDomain atulizaFilme);
 
         void DeletarFilme(int id);
+
+        List<FilmeDomain> BuscarPorTitulo(FilmeDomain tituloBusca);
     }
 }

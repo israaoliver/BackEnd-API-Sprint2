@@ -14,5 +14,11 @@ namespace Senai_Tarde.Domains
         public int IdGenero { get; set; }
 
         public GeneroDomain Genero { get; set; }
+
+
+        public FilmeDomain()
+        {
+
+        }
     }
 }

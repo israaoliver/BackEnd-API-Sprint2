@@ -25,7 +25,21 @@ namespace Senai_Tarde.Controllers
         [HttpGet]
         public IEnumerable<FilmeDomain> Get()
         {
-            return _filmesRepository.Listar();
+           return _filmesRepository.Listar();
+
+        }
+
+        [HttpGet ("Buscar")]
+        public IActionResult Get(FilmeDomain tituloBusca)
+        {
+            List<FilmeDomain> filmeAchado = new List<FilmeDomain>();
+
+            filmeAchado = _filmesRepository.BuscarPorTitulo(tituloBusca);
+            if (filmeAchado.Count == 0)
+            {
+                return NotFound("Nenhum titulo encontrado");
+            }
+            return Ok(filmeAchado);
         }
 
         [HttpGet ("{id}")]

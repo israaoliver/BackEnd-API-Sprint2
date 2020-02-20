@@ -11,20 +11,43 @@ namespace Senai_Tarde.Repositories
     public class FilmesRepository : IFilmesRepository
     {
 
-        private string conexao = "Data Source=DEV9\\SQLEXPRESS; initial catalog=Filmes_Prog; user Id=sa; pwd=sa@132;";
+        private string conexao = "Data Source=DESKTOP-16CG1FL\\SQLEXPRESS; initial catalog=Filmes_Prog; user Id=sa; pwd=sa@132;";
 
         public void AtualizarFilme(int id, FilmeDomain atulizaFilme)
         {
+            FilmeDomain filme = new FilmeDomain();
+
+            if ((atulizaFilme.IdGenero == 0))
+            {
+                filme = BuscarId(id);
+
+            }else if(atulizaFilme.Titulo == null)
+            {
+                filme = BuscarId(id);
+
+                filme.IdGenero = atulizaFilme.IdGenero;
+
+                atulizaFilme.Titulo = filme.Titulo;
+            }else
+            {
+                filme = atulizaFilme;
+            }
+
+
+
+
             using (SqlConnection con = new SqlConnection(conexao))
             {
-                string update = $"UPDATE Filmes SET Titulo = '{atulizaFilme.Titulo}' WHERE IdFilmes= {id}";
+                string update = $"UPDATE Filmes SET Titulo = '{atulizaFilme.Titulo}', IdGenero = {filme.IdGenero} WHERE IdFilme= {id}";
 
                 con.Open();
 
-                using (SqlCommand cmd = new SqlCommand(update, con))
-                {
-                    cmd.ExecuteNonQuery();
-                }
+             
+                
+                    using (SqlCommand cmd = new SqlCommand(update, con))
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
 
             }
         }
@@ -33,7 +56,7 @@ namespace Senai_Tarde.Repositories
         {
             using (SqlConnection con = new SqlConnection(conexao))
             {
-                string pegando = $"SELECT IdFilmes,IdGenero,Titulo FROM Filmes WHERE IdFilmes = {id}";
+                string pegando = $"SELECT IdFilme,IdGenero,Titulo FROM Filmes WHERE IdFilme = {id}";
 
                 con.Open();
 
@@ -59,11 +82,58 @@ namespace Senai_Tarde.Repositories
             return null;
         }
 
+        public List<FilmeDomain> BuscarPorTitulo(FilmeDomain tituloBusca)
+        {
+
+            List<FilmeDomain> listaFilmes = new List<FilmeDomain>();
+            using (SqlConnection con = new SqlConnection(conexao))
+            {
+                string queryBuscar = $"SELECT Filmes.IdFilme, Filmes.IdGenero,Filmes.Titulo, Generos.Nome FROM Filmes " +
+                    $"INNER JOIN Generos ON Generos.IdGenero = Filmes.IdGenero " +
+                    $"WHERE Titulo LIKE '%{tituloBusca.Titulo}%' ORDER BY Titulo DESC";
+
+                con.Open();
+
+                SqlDataReader rdr;
+
+                using (SqlCommand cmd = new SqlCommand(queryBuscar, con))
+                {
+                    rdr = cmd.ExecuteReader();
+
+                    while(rdr.Read())
+                    {
+
+                        GeneroDomain genero = new GeneroDomain
+                        {
+                            IdGenero = Convert.ToInt32(rdr[1]),
+                            Nome = rdr[3].ToString()
+                        };
+
+
+                        FilmeDomain filme = new FilmeDomain
+                        {
+                            IdFilme = Convert.ToInt32(rdr[0]),
+                            IdGenero = Convert.ToInt32(rdr[1]),
+                            Titulo = rdr[2].ToString(),
+                            Genero = genero
+
+
+                        };
+
+                        listaFilmes.Add(filme);
+                    }
+                }
+
+                return listaFilmes;
+            }
+        }
+
         public void Cadastrar(FilmeDomain novoFilme)
         {
             using (SqlConnection con = new SqlConnection(conexao))
             {
                 string create = $"INSERT INTO Filmes(IdGenero,Titulo) VALUES ({novoFilme.IdGenero},'{novoFilme.Titulo}')";
+
 
                 con.Open();
 
@@ -95,7 +165,7 @@ namespace Senai_Tarde.Repositories
 
             using (SqlConnection con = new SqlConnection(conexao))
             {
-                string query = "SELECT Filmes.IdFilmes, Filmes.IdGenero, Filmes.Titulo, Generos.Nome FROM Filmes INNER JOIN Generos ON Generos.IdGenero = Filmes.IdGenero";
+                string query = "SELECT Filmes.IdFilme, Filmes.IdGenero, Filmes.Titulo, Generos.Nome FROM Filmes INNER JOIN Generos ON Generos.IdGenero = Filmes.IdGenero";
 
                 con.Open();
 
@@ -125,10 +195,6 @@ namespace Senai_Tarde.Repositories
                                                   
 
                         };
-
-
-
-
 
                         ListaFilme.Add(filme);
 
