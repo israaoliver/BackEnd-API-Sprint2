@@ -11,7 +11,7 @@ namespace Senai_Tarde.Repositories
     public class FilmesRepository : IFilmesRepository
     {
 
-        private string conexao = "Data Source=DESKTOP-16CG1FL\\SQLEXPRESS; initial catalog=Filmes_Prog; user Id=sa; pwd=sa@132;";
+        private string conexao = "Data Source=DEV9\\SQLEXPRESS; initial catalog=Filmes_Prog; user Id=sa; pwd=sa@132;";
 
         public void AtualizarFilme(int id, FilmeDomain atulizaFilme)
         {
@@ -148,7 +148,7 @@ namespace Senai_Tarde.Repositories
         {
             using (SqlConnection con = new SqlConnection(conexao))
             {
-                string delete = $"DELETE FROM Filmes WHERE IdFilmes = {id}";
+                string delete = $"DELETE FROM Filmes WHERE IdFilme = {id}";
 
                 con.Open();
 
