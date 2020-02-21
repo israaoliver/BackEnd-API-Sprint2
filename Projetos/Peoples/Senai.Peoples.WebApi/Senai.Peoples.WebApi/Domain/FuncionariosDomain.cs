@@ -13,6 +13,8 @@ namespace Senai.Peoples.WebApi.Domain
 
         public string Sobrenome { get; set; }
 
+        public DateTime DataNacimento { get; set;}
+
         public FuncionariosDomain ()
         {
 

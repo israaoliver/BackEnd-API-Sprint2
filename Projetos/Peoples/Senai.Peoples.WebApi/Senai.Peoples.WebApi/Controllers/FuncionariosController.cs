@@ -14,7 +14,7 @@ namespace Senai.Peoples.WebApi.Controllers
     [ApiController]
     public class FuncionariosController : Controller
     {
-        private IFuncionarioRepository _funcionarioRepository { get; set; } 
+        private IFuncionarioRepository _funcionarioRepository { get; set; }
 
         public FuncionariosController()
         {
@@ -27,22 +27,78 @@ namespace Senai.Peoples.WebApi.Controllers
             return _funcionarioRepository.Listar();
         }
 
+        [HttpGet ("{id}")]
+        public IActionResult BuscarId(int id)
+        {
+            var f =_funcionarioRepository.BuscarId(id);
+
+            if(f == null)
+            {
+                return NotFound("Funcionario Inexistente");
+            }
+            return Ok(f);
+        }
+
+        [HttpGet ("BuscarNome")]
+        public IEnumerable<FuncionariosDomain> BuscarNome(FuncionariosDomain f)
+        {
+            return _funcionarioRepository.BuscarNome(f);
+
+
+        }
+
+        [HttpGet ("NomesCompletos")]
+        public IEnumerable<NomeDomain> NomesCompletos()
+        {
+
+
+            return _funcionarioRepository.NomeCompleto();
+
+        }
+
+        [HttpPut ("{id}")]
+        public IActionResult Atualizar(int id, FuncionariosDomain f)
+        {
+            var f_Existente = _funcionarioRepository.BuscarId(id);
+
+            if (f_Existente == null)
+            {
+                return NotFound("Funcionario Inexistente");
+            }
+            _funcionarioRepository.Atulizar(id, f);
+            return StatusCode(301);
+
+
+        }
+
         [HttpPost]
         public IActionResult Cadastrar(FuncionariosDomain funcionario)
         {
-            if (funcionario.Nome == "")
+            if ((funcionario.Nome == "") || (funcionario.Sobrenome == ""))
             {
-                return BadRequest("Nome Funcionario Vazio");
-            }else if (funcionario.Sobrenome == "")
-            {
-                return BadRequest("Sobrenome Funcionario Vazio");
+                return BadRequest("Campo em  Funcionario Vazio");
             }
+
 
 
             _funcionarioRepository.Cadastrar(funcionario);
 
             return StatusCode(201);
+        }
 
+        [HttpDelete ("{id}")]
+        public IActionResult Deletar(int id)
+        {
+            var f_Existente = _funcionarioRepository.BuscarId(id);
+
+            if (f_Existente == null)
+            {
+                return NotFound("Funcionario Inexistente");
+            }
+
+            _funcionarioRepository.Deletar(id);
+
+            return StatusCode(200);
 
         }
     }
