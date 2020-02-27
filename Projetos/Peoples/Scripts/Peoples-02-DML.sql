@@ -5,4 +5,3 @@ VALUES ('Catarina', 'Strada'),
 	('Tadeu', 'Vitelli');
 
 
-

@@ -6,3 +6,7 @@ CREATE TABLE Funcionarios(
 	Nome VARCHAR(255) NOT NULL,
 	Sobrenome VARCHAR(255) NOT NULL
 );
+
+ALTER TABLE Funcionarios 
+ADD DataNacimento DATE;
+
