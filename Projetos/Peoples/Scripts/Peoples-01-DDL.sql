@@ -10,3 +10,14 @@ CREATE TABLE Funcionarios(
 ALTER TABLE Funcionarios 
 ADD DataNacimento DATE;
 
+CREATE TABLE TiposUsuarios(
+	IdTipoUsuario INT PRIMARY KEY IDENTITY,
+	Titulo VARCHAR(255) UNIQUE NOT NULL
+);
+GO
+CREATE TABLE Usuarios(
+	IdUsuario INT PRIMARY KEY IDENTITY,
+	IdTipoUsuario INT FOREIGN KEY REFERENCES TiposUsuarios (IdTipoUsuario),
+	Email VARCHAR(255) UNIQUE NOT NULL,
+	Senha VARCHAR(255) NOT NULL
+);

@@ -10,7 +10,7 @@ namespace Senai_Tarde.Repositories
 {
     public class GeneroRepository : IGeneroRepository
     {
-        private string StringConexao = "Data Source=DESKTOP-16CG1FL\\SQLEXPRESS; initial catalog=Filmes_Prog; user Id=sa; pwd=sa@132;";
+        private string StringConexao = "Data Source=DEV9\\SQLEXPRESS; initial catalog=Filmes_Prog; user Id=sa; pwd=sa@132;";
 
         public GeneroDomain Atualizar(GeneroDomain genero)
         {

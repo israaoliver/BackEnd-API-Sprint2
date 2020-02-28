@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai_Tarde.Domains;
@@ -34,6 +35,8 @@ namespace Senai_Tarde.Controllers
             return StatusCode (200,_generoRepository.Buscar(id));
         }
 
+
+        [Authorize]
         [HttpPost]
         public IActionResult Post(GeneroDomain genero)
         {

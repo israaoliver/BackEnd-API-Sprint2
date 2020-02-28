@@ -45,9 +45,9 @@ namespace Senai_Tarde
 
                    ClockSkew = TimeSpan.FromMinutes(30),
 
-                   ValidIssuer = "Filme.WebApi",
+                   ValidIssuer = "Filmes.WebApi",
 
-                   ValidAudience = "Filme.WebAPi"
+                   ValidAudience = "Filmes.WebApi"
 
                };
 
