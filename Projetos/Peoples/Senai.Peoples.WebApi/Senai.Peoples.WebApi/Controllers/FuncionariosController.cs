@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Peoples.WebApi.Domain;
 using Senai.Peoples.WebApi.Interfaces;
@@ -21,12 +22,14 @@ namespace Senai.Peoples.WebApi.Controllers
             _funcionarioRepository = new FuncionarioRepository();
         }
 
+        [Authorize(Roles = "2")]
         [HttpGet]
         public IEnumerable<FuncionariosDomain> Listar()
         {
             return _funcionarioRepository.Listar();
         }
 
+        [Authorize(Roles = "2")]
         [HttpGet ("{id}")]
         public IActionResult BuscarId(int id)
         {
@@ -39,6 +42,7 @@ namespace Senai.Peoples.WebApi.Controllers
             return Ok(f);
         }
 
+        [Authorize(Roles = "2")]
         [HttpGet ("BuscarNome")]
         public IEnumerable<FuncionariosDomain> BuscarNome(FuncionariosDomain f)
         {
@@ -47,6 +51,7 @@ namespace Senai.Peoples.WebApi.Controllers
 
         }
 
+        [Authorize(Roles = "2")]
         [HttpGet ("NomesCompletos")]
         public IEnumerable<NomeDomain> NomesCompletos()
         {
@@ -56,6 +61,7 @@ namespace Senai.Peoples.WebApi.Controllers
 
         }
 
+        [Authorize(Roles = "1")]
         [HttpPut ("{id}")]
         public IActionResult Atualizar(int id, FuncionariosDomain f)
         {
@@ -71,6 +77,7 @@ namespace Senai.Peoples.WebApi.Controllers
 
         }
 
+        [Authorize(Roles = "2")]
         [HttpPost]
         public IActionResult Cadastrar(FuncionariosDomain funcionario)
         {
@@ -86,6 +93,7 @@ namespace Senai.Peoples.WebApi.Controllers
             return StatusCode(201);
         }
 
+        [Authorize(Roles = "1")]
         [HttpDelete ("{id}")]
         public IActionResult Deletar(int id)
         {

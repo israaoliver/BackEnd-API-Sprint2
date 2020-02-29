@@ -10,7 +10,7 @@ namespace Senai.Peoples.WebApi.Repositories
 {
     public class TiposUsuariosRepository : ITiposUsuariosRepository
     {
-        private string conexao = "Data Source=DEV9\\SQLEXPRESS; initial catalog=T_Peoples; user Id=sa; pwd=sa@132;";
+        private string conexao = "Data Source=DESKTOP-16CG1FL\\SQLEXPRESS; initial catalog=T_Peoples; user Id=sa; pwd=sa@132;";
 
         public void Atualizar(TiposUsuariosDomain tipo)
         {
@@ -30,7 +30,7 @@ namespace Senai.Peoples.WebApi.Repositories
         {
             using (SqlConnection con = new SqlConnection(conexao))
             {
-                string busca = $"SELECT IdTipoUsuario, Titulo FROM TiposUsuario WHERE IdTipoUsuario = {id}";
+                string busca = $"SELECT IdTipoUsuario, Titulo FROM TiposUsuarios WHERE IdTipoUsuario = {id}";
 
                 using (SqlCommand cmd = new SqlCommand(busca, con))
                 {

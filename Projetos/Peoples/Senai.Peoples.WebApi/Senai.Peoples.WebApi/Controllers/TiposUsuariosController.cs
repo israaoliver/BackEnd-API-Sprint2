@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Peoples.WebApi.Domain;
@@ -22,12 +23,14 @@ namespace Senai.Peoples.WebApi.Controllers
             _tiposUsuariosRepository = new TiposUsuariosRepository();
         }
 
+        [Authorize(Roles = "1")]
         [HttpGet]
         public IEnumerable<TiposUsuariosDomain> Listar()
         {
             return _tiposUsuariosRepository.Listar();
         }
 
+        [Authorize(Roles = "1")]
         [HttpGet ("{id}")]
         public IActionResult BuscarId(int id)
         {
@@ -41,6 +44,7 @@ namespace Senai.Peoples.WebApi.Controllers
             return Ok(t);
         }
 
+        [Authorize(Roles = "1")]
         [HttpPut]
         public IActionResult Atualizar(TiposUsuariosDomain tipo)
         {
@@ -56,6 +60,7 @@ namespace Senai.Peoples.WebApi.Controllers
 
         }
 
+        [Authorize(Roles = "1")]
         [HttpDelete ("{id}")]
         public IActionResult Delete(int id)
         {
@@ -69,5 +74,6 @@ namespace Senai.Peoples.WebApi.Controllers
             _tiposUsuariosRepository.Deletar(id);
             return StatusCode(200);
         }
+
     }
 }

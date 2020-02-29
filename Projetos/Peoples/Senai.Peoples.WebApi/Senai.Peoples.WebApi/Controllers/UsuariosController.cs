@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Peoples.WebApi.Domain;
@@ -22,12 +23,14 @@ namespace Senai.Peoples.WebApi.Controllers
             _usuariosRepository = new UsuariosRepository();
         }
 
+        [Authorize(Roles = "1")]
         [HttpGet]
         public IEnumerable<UsuariosDomain> Listar()
         {
             return _usuariosRepository.Listar();
         }
 
+        [Authorize(Roles = "1")]
         [HttpGet ("{id}")]
         public IActionResult BuscarId(int id)
         {
@@ -41,14 +44,20 @@ namespace Senai.Peoples.WebApi.Controllers
             return Ok(user);
         }
 
+        [Authorize(Roles = "2")]
         [HttpPost]
         public IActionResult Cadastrar(UsuariosDomain user)
         {
-            _usuariosRepository.Cadastrar(user);
+            if((user.Email == "") || (user.IdTipoUsuario.Equals(0)) || (user.Senha ==""))
+            {
+                return BadRequest("Campo vazio encontrado preencha todos");
+            }
 
+            _usuariosRepository.Cadastrar(user);
             return StatusCode(201);
         }
 
+        [Authorize(Roles = "1")]
         [HttpPut]
         public IActionResult Atualizar(UsuariosDomain user)
         {
@@ -63,6 +72,7 @@ namespace Senai.Peoples.WebApi.Controllers
             return StatusCode(201);
         }
 
+        [Authorize(Roles = "1")]
         [HttpDelete ("{id}")]
         public IActionResult Deletar(int id)
         {
@@ -70,7 +80,7 @@ namespace Senai.Peoples.WebApi.Controllers
 
             if (existe == null)
             {
-                return NotFound("Funcionario Inexistente");
+                return NotFound("UsuarioInexistente");
             }
 
             _usuariosRepository.Deletar(id);

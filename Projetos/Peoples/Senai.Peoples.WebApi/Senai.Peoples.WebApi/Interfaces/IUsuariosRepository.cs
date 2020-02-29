@@ -19,6 +19,8 @@ namespace Senai.Peoples.WebApi.Interfaces
 
         void Deletar(int id);
 
+        UsuariosDomain Autenticando(string email, string pwd);
+
 
     }
 }

@@ -5,8 +5,8 @@ VALUES ('Catarina', 'Strada'),
 	('Tadeu', 'Vitelli');
 
 INSERT INTO TiposUsuarios(Titulo)
-VALUES ('Adm'),
-	('Comum');
+VALUES 
+	('Premium');
 
 INSERT INTO Usuarios(IdTipoUsuario,Email,Senha)
 VALUES (1,'adm@email.com','132'),

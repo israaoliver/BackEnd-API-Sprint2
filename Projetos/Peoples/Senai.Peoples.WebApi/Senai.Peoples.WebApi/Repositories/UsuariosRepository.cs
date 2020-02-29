@@ -10,13 +10,13 @@ namespace Senai.Peoples.WebApi.Repositories
 {
     public class UsuariosRepository : IUsuariosRepository
     {
-        private string conexao = "Data Source=DEV9\\SQLEXPRESS; initial catalog=T_Peoples; user Id=sa; pwd=sa@132;";
+        private string conexao = "Data Source=DESKTOP-16CG1FL\\SQLEXPRESS; initial catalog=T_Peoples; user Id=sa; pwd=sa@132;";
 
         public void Atualizar(UsuariosDomain user)
         {
             using (SqlConnection con = new SqlConnection(conexao))
             {
-                string update = $"UPDATE Usuarios SET Email = '{user.Email}', Senha = '{user.Senha}', IdTipoUsuario = {user.IdTipoUsuario} WHERE IdTipoUsuario = {user.IdUsuarios}";
+                string update = $"UPDATE Usuarios SET Email = '{user.Email}', Senha = '{user.Senha}', IdTipoUsuario = {user.IdTipoUsuario} WHERE IdUsuario = {user.IdUsuarios}";
 
                 using (SqlCommand cmd = new SqlCommand(update, con))
                 {
@@ -24,6 +24,41 @@ namespace Senai.Peoples.WebApi.Repositories
                     cmd.ExecuteNonQuery();
                 }
             }
+        }
+
+        public UsuariosDomain Autenticando(string email, string pwd)
+        {
+            using (SqlConnection con = new SqlConnection(conexao))
+            {
+                string validando = $"SELECT Usuarios.IdUsuario, Usuarios.IdTipoUsuario, Usuarios.Email, Usuarios.Senha, TiposUsuarios.Titulo " +
+                    $"FROM Usuarios INNER JOIN TiposUsuarios ON Usuarios.IdTipoUsuario = TiposUsuarios.IdTipoUsuario WHERE Email = '{email}' AND Senha = '{pwd}'";
+
+                using (SqlCommand cmd = new SqlCommand(validando, con))
+                {
+
+                    con.Open();
+
+                    SqlDataReader rdr = cmd.ExecuteReader();
+
+                    if(rdr.HasRows)
+                    {
+                        UsuariosDomain user = new UsuariosDomain();
+
+                        if(rdr.Read())
+                        {
+                            user.IdUsuarios = Convert.ToInt32(rdr[0]);
+                            user.IdTipoUsuario = Convert.ToInt32(rdr[1]);
+                            user.Email = rdr[2].ToString();
+                            user.Senha = rdr[3].ToString();
+                            user.TipoUsuario.IdTipoUsuario = Convert.ToInt32(rdr[1]);
+                            user.TipoUsuario.Titulo = rdr[4].ToString();
+
+                        }
+                        return user;
+                    }
+                }
+            }
+            return null;
         }
 
         public UsuariosDomain BuscarPorId(int id)
