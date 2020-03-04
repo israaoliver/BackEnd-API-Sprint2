@@ -26,3 +26,5 @@ C:\Users\Israel\Documents\Docs\BackEnd-API-Sprint2\Projetos\Peoples\Senai.People
 C:\Users\Israel\Documents\Docs\BackEnd-API-Sprint2\Projetos\Peoples\Senai.Peoples.WebApi\Senai.Peoples.WebApi\obj\Debug\netcoreapp2.1\Senai.Peoples.WebApi.RazorTargetAssemblyInfo.cache
 C:\Users\Israel\Documents\Docs\BackEnd-API-Sprint2\Projetos\Peoples\Senai.Peoples.WebApi\Senai.Peoples.WebApi\obj\Debug\netcoreapp2.1\Senai.Peoples.WebApi.dll
 C:\Users\Israel\Documents\Docs\BackEnd-API-Sprint2\Projetos\Peoples\Senai.Peoples.WebApi\Senai.Peoples.WebApi\obj\Debug\netcoreapp2.1\Senai.Peoples.WebApi.pdb
+C:\Users\44346823858\Documents\1-Docs\Meus_Repositorios\Sprint2-BackEnd\BackEnd-API-Sprint2\Projetos\Peoples\Senai.Peoples.WebApi\Senai.Peoples.WebApi\bin\Debug\netcoreapp2.1\Senai.Peoples.WebApi.xml
+C:\Users\44346823858\Documents\1-Docs\Meus_Repositorios\Sprint2-BackEnd\BackEnd-API-Sprint2\Projetos\Peoples\Senai.Peoples.WebApi\Senai.Peoples.WebApi\obj\Debug\netcoreapp2.1\Senai.Peoples.WebApi.xml

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Peoples.WebApi.Domain;
 using Senai.Peoples.WebApi.Interfaces;
@@ -22,13 +23,26 @@ namespace Senai.Peoples.WebApi.Controllers
             _funcionarioRepository = new FuncionarioRepository();
         }
 
-        [Authorize(Roles = "2")]
+        /// <summary>
+        /// Lista todos os funcionarios
+        /// </summary>
+        /// <returns>Retorna uma lista de funcionarios e um status code 200 - Ok</returns>
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [Authorize]
         [HttpGet]
         public IEnumerable<FuncionariosDomain> Listar()
         {
             return _funcionarioRepository.Listar();
         }
 
+
+        /// <summary>
+        /// Buscar o usuario atravez do id 
+        /// </summary>
+        /// <param numero_do_usuario="id"></param>
+        /// <returns>Retorna um usuario do id</returns>
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [Authorize(Roles = "2")]
         [HttpGet ("{id}")]
         public IActionResult BuscarId(int id)
@@ -42,8 +56,14 @@ namespace Senai.Peoples.WebApi.Controllers
             return Ok(f);
         }
 
+        /// <summary>
+        /// Busca nome do funcionario pelo paramentro Nome
+        /// </summary>
+        /// <param name="funcionarioNome"></param>
+        /// <returns>Retorna o Funcionarios Funcionarios de acordo com o pesquisado</returns>
         [Authorize(Roles = "2")]
         [HttpGet ("BuscarNome")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public IEnumerable<FuncionariosDomain> BuscarNome(FuncionariosDomain f)
         {
             return _funcionarioRepository.BuscarNome(f);

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Senai.Peoples.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:Senai.Peoples.WebApi.Controllers.FuncionariosController.Listar">
+            <summary>
+            Lista todos os funcionarios
+            </summary>
+            <returns>Retorna uma lista de funcionarios e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:Senai.Peoples.WebApi.Controllers.FuncionariosController.BuscarId(System.Int32)">
+            <summary>
+            Buscar o usuario atravez do id 
+            </summary>
+            <param numero_do_usuario="id"></param>
+            <returns>Retorna um usuario do id</returns>
+        </member>
+        <member name="M:Senai.Peoples.WebApi.Controllers.FuncionariosController.BuscarNome(Senai.Peoples.WebApi.Domain.FuncionariosDomain)">
+            <summary>
+            Busca nome do funcionario pelo paramentro Nome
+            </summary>
+            <param name="funcionarioNome"></param>
+            <returns>Retorna o Funcionarios Funcionarios de acordo com o pesquisado</returns>
+        </member>
+    </members>
+</doc>

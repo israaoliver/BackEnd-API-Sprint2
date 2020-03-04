@@ -1,0 +1,1 @@
+Scaffold-DbContext "Data Source=DEV9\SQLEXPRESS; initial Catalog=Inlock_Games_Tarde; user Id=sa; pwd=sa@132;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Domains -ContextDir Contexts -Context InlockContextr

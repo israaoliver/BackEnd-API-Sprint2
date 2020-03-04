@@ -11,7 +11,7 @@ namespace Senai.Peoples.WebApi.Repositories
 
     public class FuncionarioRepository : IFuncionarioRepository
     {
-        private string  Conexao = "Data Source=DESKTOP-16CG1FL\\SQLEXPRESS; initial catalog=T_Peoples; user Id=sa; pwd=sa@132;";
+        private string  Conexao = "Data Source=DEV9\\SQLEXPRESS; initial catalog=T_Peoples; user Id=sa; pwd=sa@132;";
 
         public void Atulizar(int id, FuncionariosDomain f)
         {

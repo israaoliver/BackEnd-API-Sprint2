@@ -10,7 +10,7 @@ namespace Senai.Peoples.WebApi.Repositories
 {
     public class TiposUsuariosRepository : ITiposUsuariosRepository
     {
-        private string conexao = "Data Source=DESKTOP-16CG1FL\\SQLEXPRESS; initial catalog=T_Peoples; user Id=sa; pwd=sa@132;";
+        private string conexao = "Data Source=DEV9\\SQLEXPRESS; initial catalog=T_Peoples; user Id=sa; pwd=sa@132;";
 
         public void Atualizar(TiposUsuariosDomain tipo)
         {
