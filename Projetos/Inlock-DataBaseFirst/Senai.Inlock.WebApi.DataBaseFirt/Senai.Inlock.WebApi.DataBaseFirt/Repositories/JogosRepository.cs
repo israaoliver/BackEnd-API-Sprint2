@@ -12,6 +12,13 @@ namespace Senai.Inlock.WebApi.DataBaseFirt.Repositories
 
         InlockContextr ctx = new InlockContextr();
 
+        public void Atualizar(Jogos jooj)
+        {
+            ctx.Jogos.Update(jooj);
+            ctx.SaveChanges();
+        }
+
+
         public Jogos BuscarPorId(int id)
         {
             return ctx.Jogos.FirstOrDefault(j => j.IdJogos == id);
@@ -25,13 +32,14 @@ namespace Senai.Inlock.WebApi.DataBaseFirt.Repositories
 
         public List<Jogos> Listar()
         {
-            return ctx.Jogos.ToList();
+           return ctx.Jogos.ToList();
+  
         }
 
         public void Remover(int id)
         {
             var joojs = ctx.Jogos.FirstOrDefault(j => j.IdJogos == id);
-            ctx.Remove(joojs);
+            ctx.Jogos.Remove(joojs);
             ctx.SaveChanges();
         }
     }

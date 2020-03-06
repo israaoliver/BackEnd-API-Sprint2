@@ -10,11 +10,28 @@ namespace Senai.Inlock.WebApi.DataBaseFirt.Repositories
     public class EstudioRepository : IEstudioRepository
     {
 
+        private IJogosRepository _jogosRepository { get; set; }
+
+        public EstudioRepository()
+        {
+            _jogosRepository = new JogosRepository();
+        }
+
         InlockContextr ctx = new InlockContextr();
+
+        public void Atualizar(Estudios estudios)
+        {
+            ctx.Estudios.Update(estudios);
+            ctx.SaveChanges();
+
+        }
 
         public Estudios BuscarId(int id)
         {
-            return ctx.Estudios.FirstOrDefault(e => e.IdEstudio == id);
+            var estudio = ctx.Estudios.FirstOrDefault(e => e.IdEstudio == id);
+
+
+            return estudio;
         }
 
         public void Cadastrar(Estudios estudio)
@@ -25,7 +42,12 @@ namespace Senai.Inlock.WebApi.DataBaseFirt.Repositories
 
         public List<Estudios> Listar()
         {
-            return ctx.Estudios.ToList();
+            var estudios = ctx.Estudios.ToList();
+
+             estudios.ForEach(e => e.Jogos = _jogosRepository.Listar().Where(x => x.IdEstudio == e.IdEstudio).ToList());
+
+            
+            return estudios;
         }
     }
 }

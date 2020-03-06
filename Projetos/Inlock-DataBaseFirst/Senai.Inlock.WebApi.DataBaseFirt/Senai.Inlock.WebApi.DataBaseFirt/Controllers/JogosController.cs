@@ -49,5 +49,13 @@ namespace Senai.Inlock.WebApi.DataBaseFirt.Controllers
             _jogosRepository.Remover(id);
             return StatusCode(200);
         }
+
+
+        [HttpPut]
+        public IActionResult Atualizar(Jogos jogo)
+        {
+            _jogosRepository.Atualizar(jogo);
+            return StatusCode(200);
+        }
     }
 }

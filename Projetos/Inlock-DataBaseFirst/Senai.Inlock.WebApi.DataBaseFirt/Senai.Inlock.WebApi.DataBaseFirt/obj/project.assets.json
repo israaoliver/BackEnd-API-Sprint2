@@ -12538,11 +12538,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\44346823858\\Documents\\1-Docs\\Meus_Repositorios\\Sprint2-BackEnd\\Senai.Inlock.WebApi.DataBaseFirt\\Senai.Inlock.WebApi.DataBaseFirt\\Senai.Inlock.WebApi.DataBaseFirt.csproj",
+      "projectUniqueName": "C:\\Users\\44346823858\\Documents\\1-Docs\\Meus_Repositorios\\BackEnd-API-Sprint2\\Projetos\\Inlock-DataBaseFirst\\Senai.Inlock.WebApi.DataBaseFirt\\Senai.Inlock.WebApi.DataBaseFirt\\Senai.Inlock.WebApi.DataBaseFirt.csproj",
       "projectName": "Senai.Inlock.WebApi.DataBaseFirt",
-      "projectPath": "C:\\Users\\44346823858\\Documents\\1-Docs\\Meus_Repositorios\\Sprint2-BackEnd\\Senai.Inlock.WebApi.DataBaseFirt\\Senai.Inlock.WebApi.DataBaseFirt\\Senai.Inlock.WebApi.DataBaseFirt.csproj",
+      "projectPath": "C:\\Users\\44346823858\\Documents\\1-Docs\\Meus_Repositorios\\BackEnd-API-Sprint2\\Projetos\\Inlock-DataBaseFirst\\Senai.Inlock.WebApi.DataBaseFirt\\Senai.Inlock.WebApi.DataBaseFirt\\Senai.Inlock.WebApi.DataBaseFirt.csproj",
       "packagesPath": "C:\\Users\\44346823858\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\44346823858\\Documents\\1-Docs\\Meus_Repositorios\\Sprint2-BackEnd\\Senai.Inlock.WebApi.DataBaseFirt\\Senai.Inlock.WebApi.DataBaseFirt\\obj\\",
+      "outputPath": "C:\\Users\\44346823858\\Documents\\1-Docs\\Meus_Repositorios\\BackEnd-API-Sprint2\\Projetos\\Inlock-DataBaseFirst\\Senai.Inlock.WebApi.DataBaseFirt\\Senai.Inlock.WebApi.DataBaseFirt\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

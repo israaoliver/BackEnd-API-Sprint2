@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Senai.Inlock.WebApi.DataBaseFirt.Interfaces
 {
-    interface IEstudioRepository
+    interface IUsuariosRepository
     {
+        List<Usuarios> Listar();
 
-        List<Estudios> Listar();
+        Usuarios BuscarId(int id);
 
-        Estudios BuscarId(int id);
+        void Cadastrar(Usuarios user);
 
-        void Cadastrar(Estudios estudio);
+        void Atualizar(Usuarios user);
 
-        void Atualizar(Estudios estudios);
-
+        void Deletar(int id);
     }
 }

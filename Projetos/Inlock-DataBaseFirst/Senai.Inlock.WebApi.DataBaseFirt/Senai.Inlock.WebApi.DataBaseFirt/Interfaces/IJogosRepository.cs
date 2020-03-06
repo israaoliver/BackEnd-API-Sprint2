@@ -14,6 +14,8 @@ namespace Senai.Inlock.WebApi.DataBaseFirt.Interfaces
 
         void Cadastrar(Jogos joojs);
 
+        void Atualizar(Jogos jooj);
+
         void Remover(int id);
     }
 }
