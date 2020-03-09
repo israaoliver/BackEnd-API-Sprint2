@@ -43,8 +43,8 @@ namespace Senai.Inlock.WebApi.DataBaseFirt.Repositories
         public List<Estudios> Listar()
         {
             var estudios = ctx.Estudios.ToList();
-
-             estudios.ForEach(e => e.Jogos = _jogosRepository.Listar().Where(x => x.IdEstudio == e.IdEstudio).ToList());
+            
+             estudios.ForEach(e => e.Jogos = _jogosRepository.Listar().Where(j => j.IdEstudio == e.IdEstudio).ToList());
 
             
             return estudios;

@@ -1,0 +1,5 @@
+Add-Migration //Nome da migration
+
+Remove-Migration //Nome da migration
+
+Update-Database
