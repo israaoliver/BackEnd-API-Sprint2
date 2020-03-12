@@ -1,1 +1,7 @@
-Scaffold-DbContext "Data Source=DEV9\SQLEXPRESS; initial Catalog=Inlock_Games_Tarde; user Id=sa; pwd=sa@132;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Domains -ContextDir Contexts -Context InlockContextr
+Scaffold-DbContext "Data Source=DEV9\SQLEXPRESS; initial Catalog=Inlock_Games_Tarde; user Id=sa; pwd=sa@132;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Domains -ContextDir Contexts -Context InlockContext
+
+Instalar Dependências
+Projetos > Pacotes NuGet >
+Microsoft.EntityFrameworkCore.Design (2.1.14)
+Microsoft.EntityFrameworkCore.SqlServer (2.1.14)
+Microsoft.EntityFrameworkCore.Tools (2.1.14) (
